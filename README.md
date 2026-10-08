@@ -1,8 +1,11 @@
 # Height Area Graphs for automated preliminary road alignment
 
+[![DOI](https://zenodo.org/badge/1410562344.svg)](https://doi.org/10.5281/zenodo.23246417)
+
 | | |
 |---|---|
 | Latest release | v0.1 (version 0.1.0), 2026-10-08 |
+| Archive (DOI) | v0.1: https://doi.org/10.5281/zenodo.23250604 · all versions: https://doi.org/10.5281/zenodo.23246417 |
 | Repository | https://github.com/stefaneduard-deaconu/auto-road-2 (branch `article-2026`) |
 | Software and data | Ioana-Alexandra Șomîtcă, Ștefan-Eduard Deaconu (see *Authors and contributions*) |
 | Article | *Height Area Graphs for Automated Preliminary Road Alignment in Hilly Terrain* (Șomîtcă, Deaconu, Boitor, Dragomir), in preparation |
@@ -116,7 +119,8 @@ software or the data and hold no copyright in this repository.
 ## Citation
 
 See `CITATION.cff`, which names both licences (MIT and CC BY 4.0). Please cite the article and
-the release you used.
+the release you used, by its version DOI (v0.1: https://doi.org/10.5281/zenodo.23250604);
+https://doi.org/10.5281/zenodo.23246417 always resolves to the latest version.
 
 ## Licence
 

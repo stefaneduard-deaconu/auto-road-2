@@ -8,6 +8,8 @@ authors:
     given-names: "Ioana-Alexandra"
   - family-names: "Deaconu"
     given-names: "Ștefan-Eduard"
+# the concept DOI: resolves to the latest archived version
+doi: "10.5281/zenodo.23246417"
 repository-code: "https://github.com/stefaneduard-deaconu/auto-road-2"
 # the code is MIT (LICENSE); the results, tables and figures are CC BY 4.0 (LICENSES/CC-BY-4.0.txt)
 license:
