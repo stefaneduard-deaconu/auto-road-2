@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below."
+title: "Height Area Graphs for automated preliminary road alignment: code and results"
+version: "0.1.0"
+date-released: "2026-10-08"
+authors:
+  - family-names: "Șomîtcă"
+    given-names: "Ioana-Alexandra"
+  - family-names: "Deaconu"
+    given-names: "Ștefan-Eduard"
+repository-code: "https://github.com/stefaneduard-deaconu/auto-road-2"
+# the code is MIT (LICENSE); the results, tables and figures are CC BY 4.0 (LICENSES/CC-BY-4.0.txt)
+license:
+  - MIT
+  - CC-BY-4.0
+# the article the code and data support; its four authors are not all authors of this software
+preferred-citation:
+  type: article
+  title: "Height Area Graphs for Automated Preliminary Road Alignment in Hilly Terrain"
+  status: in-preparation
+  authors:
+    - family-names: "Șomîtcă"
+      given-names: "Ioana-Alexandra"
+    - family-names: "Deaconu"
+      given-names: "Ștefan-Eduard"
+    - family-names: "Boitor"
+      given-names: "Rozalia-Melania"
+    - family-names: "Dragomir"
+      given-names: "Mihai-Liviu"

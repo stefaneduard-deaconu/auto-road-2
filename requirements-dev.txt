@@ -1,0 +1,6 @@
+-r requirements.txt
+pytest==9.1.1
+# Optional, not pinned: tools/md_to_docx.py prefers pandoc (a system program, installed on
+# demand with --install) and falls back to python-docx, which it pip-installs when needed.
+# the C/C++ compiler for core/native (a py3-none wheel, so --only-binary still works)
+ziglang==0.16.0

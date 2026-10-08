@@ -1,0 +1,14 @@
+__pycache__/
+.pytest_cache/
+.venv/
+.venv-*/
+build/
+*.tif
+raster/
+results/**/*.jsonl
+results/**/series/
+results/figure_cases/
+# results moved aside before a rerun, and the full synthetic-terrain file (56 MB; the
+# repository keeps its slimmed form, written by `python -m tools.slim_results`)
+results_*/
+results/x3_reduction_synthetic/x3_reduction_synthetic.csv

@@ -1,0 +1,11 @@
+{
+  "title": "Height Area Graphs for automated preliminary road alignment: code and results",
+  "upload_type": "software",
+  "creators": [
+    {"name": "Șomîtcă, Ioana-Alexandra"},
+    {"name": "Deaconu, Ștefan-Eduard"}
+  ],
+  "description": "<p>Code and results of the article <em>Height Area Graphs for Automated Preliminary Road Alignment in Hilly Terrain</em> (in preparation).</p><p>The software (code, tests and build scripts) and the data (results, tables and figures) were written and produced solely by Ioana-Alexandra Șomîtcă and Ștefan-Eduard Deaconu, who hold all copyright in them. Rozalia-Melania Boitor and Mihai-Liviu Dragomir are co-authors of the forthcoming article only: they contributed road-engineering domain expertise to the article (what to measure, what to test, and what to include in or exclude from the article). They made no contribution to the software or the data and hold no copyright in this record.</p><p>Code: MIT. Results, tables and figures: CC BY 4.0. The Idrija Fault LiDAR DEM is not included (https://doi.org/10.5069/G9QC01Q2).</p>",
+  "license": "MIT",
+  "keywords": ["road alignment", "height area graphs", "digital elevation model", "STAS 863-85"]
+}

@@ -1,0 +1,20 @@
+# Runtime dependencies, pinned to the versions the results were produced with.
+#
+# Interpreter: CPython 3.14 FREE-THREADED (the "t" build, PEP 703, GIL disabled).
+# Tested with 3.14.7+freethreaded on Windows x86_64. The free-threaded build is a
+# SEPARATE interpreter (python3.14t.exe), not a flag on the normal 3.14.
+# See setup_venv.ps1 / setup_venv.sh for how the venv is created.
+#
+# All four packages below ship cp314t (free-threaded) wheels for win_amd64, so nothing
+# is built from source. Install with --only-binary=:all: so a missing free-threaded
+# wheel fails loudly instead of starting a source build.
+#
+# The transitive dependencies of matplotlib (contourpy, cycler, fonttools, kiwisolver,
+# packaging, pillow, pyparsing, python-dateutil, six) are resolved by pip and are not
+# pinned here; they all had cp314t wheels at the time of writing.
+#
+# History: the previous pins (numpy 2.0.2, scipy 1.13.1) had no wheels even for
+# Python 3.13 and were never the versions actually installed.
+numpy==2.5.3
+scipy==1.18.1
+matplotlib==3.11.2
