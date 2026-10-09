@@ -9,6 +9,8 @@ from __future__ import annotations
 
 import ctypes
 import math
+import re
+import subprocess
 import sys
 import time
 from dataclasses import dataclass, field
@@ -122,6 +124,8 @@ def _memory_status() -> Optional[tuple]:
         if ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(status)):
             return int(status.total), int(status.available)
         return None
+    if sys.platform == 'darwin':
+        return _darwin_memory_status()
     try:
         values = {}
         with open('/proc/meminfo') as handle:
@@ -131,6 +135,29 @@ def _memory_status() -> Optional[tuple]:
                     values[key] = int(rest.split()[0]) * 1024
         return values['MemTotal'], values['MemAvailable']
     except (OSError, KeyError, ValueError):
+        return None
+
+
+#: the `vm_stat` page counts that macOS can hand to a process without swapping
+_DARWIN_AVAILABLE_PAGES = ('Pages free', 'Pages inactive', 'Pages speculative', 'Pages purgeable')
+
+
+def _darwin_memory_status() -> Optional[tuple]:
+    """macOS: the total from `sysctl hw.memsize`; the available memory from `vm_stat`, as the
+    free, inactive, speculative and purgeable pages (close to what psutil reports)."""
+    try:
+        total = int(subprocess.run(['sysctl', '-n', 'hw.memsize'], capture_output=True,
+                                   text=True, check=True).stdout.strip())
+        lines = subprocess.run(['vm_stat'], capture_output=True, text=True,
+                               check=True).stdout.splitlines()
+        page = int(re.search(r'page size of (\d+) bytes', lines[0]).group(1))
+        pages = {}
+        for line in lines[1:]:
+            key, _, rest = line.partition(':')
+            pages[key.strip()] = int(rest.strip().rstrip('.') or 0)
+        return total, page * sum(pages[key] for key in _DARWIN_AVAILABLE_PAGES)
+    except (OSError, subprocess.SubprocessError, AttributeError, IndexError, KeyError,
+            ValueError):
         return None
 
 

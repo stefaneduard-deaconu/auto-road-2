@@ -4,7 +4,7 @@
 | -------------------------- | ------------- | ------------- | ---------------- |
 | Horizontal curve radius R_H | 2,569 | 35.2% | 34 ± 99 |
 | Longitudinal gradient i | 2,678 | 52.2% | 189 ± 283 |
-| Tangent length L_alignment | 2,397 | 72.1% | 43 ± 42 |
+| Tangent length L_alignment | 2,397 | 72.0% | 43 ± 42 |
 | Concave vertical curve radius R_V | 2,678 | 33.9% | 75 ± 145 |
 | Convex vertical curve radius R_V | 2,678 | 41.1% | 92 ± 155 |
 

@@ -94,3 +94,25 @@ def test_the_memory_gate_depends_on_total_memory_not_on_whoever_is_running(monke
     # fits and is free: runs
     monkeypatch.setattr(programme, 'available_memory_bytes', lambda: 8 * gib)
     programme.require_memory(cells_for(3), 'fine', wait_s=0.0)
+
+
+def test_the_memory_gate_reads_macos_sysctl_and_vm_stat(monkeypatch):
+    import subprocess
+    from core import programme
+    vm_stat = ('Mach Virtual Memory Statistics: (page size of 16384 bytes)\n'
+               'Pages free:                                     1000.\n'
+               'Pages active:                                 700000.\n'
+               'Pages inactive:                                 2000.\n'
+               'Pages speculative:                               300.\n'
+               'Pages wired down:                             200000.\n'
+               'Pages purgeable:                                  40.\n'
+               '"Translation faults":                      529700017.\n')
+    outputs = {'sysctl': '38654705664\n', 'vm_stat': vm_stat}
+
+    def fake_run(args, **kwargs):
+        return subprocess.CompletedProcess(args, 0, stdout=outputs[args[0]], stderr='')
+
+    monkeypatch.setattr(programme.subprocess, 'run', fake_run)
+    assert programme._darwin_memory_status() == (38654705664, 16384 * (1000 + 2000 + 300 + 40))
+    outputs['vm_stat'] = 'not vm_stat output\n'
+    assert programme._darwin_memory_status() is None

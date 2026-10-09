@@ -4,9 +4,9 @@
 | -------------------------- | ------------- | ------------- | ---------------- |
 | Horizontal curve radius R_H | 1,614 | 39.1% | 69 ± 199 |
 | Longitudinal gradient i | 1,872 | 96.2% | 729 ± 389 |
-| Tangent length L_alignment | 1,374 | 54.4% | 31 ± 41 |
-| Concave vertical curve radius R_V | 1,872 | 90.1% | 258 ± 208 |
-| Convex vertical curve radius R_V | 1,872 | 91.7% | 311 ± 212 |
+| Tangent length L_alignment | 1,374 | 53.7% | 31 ± 41 |
+| Concave vertical curve radius R_V | 1,867 | 90.3% | 259 ± 208 |
+| Convex vertical curve radius R_V | 1,867 | 91.9% | 312 ± 212 |
 | All parameters pass | 1,872 | 3.8% pass | – |
 
 *Values: mean ± standard deviation over the alignments checked. Stations 2 m apart; edge costs: height change with the length tie-break, height change plus length, and the gradient cut.*
