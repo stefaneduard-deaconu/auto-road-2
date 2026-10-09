@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | Latest release | v0.2 (version 0.2.0), 2026-10-09: the full rerun on macOS (Apple M3 Pro) |
-| Archive (DOI) | v0.1: https://doi.org/10.5281/zenodo.23250604 · v0.2: see the all-versions DOI · all versions: https://doi.org/10.5281/zenodo.23246417 |
+| Archive (DOI) | v0.1: https://doi.org/10.5281/zenodo.23250604 · v0.2: https://doi.org/10.5281/zenodo.23254011 · all versions: https://doi.org/10.5281/zenodo.23246417 |
 | Repository | https://github.com/stefaneduard-deaconu/auto-road-2 (branch `article-2026`) |
 | Software and data | Ioana-Alexandra Șomîtcă, Ștefan-Eduard Deaconu (see *Authors and contributions*) |
 | Article | *Height Area Graphs for Automated Preliminary Road Alignment in Hilly Terrain* (Șomîtcă, Deaconu, Boitor, Dragomir), in preparation |
@@ -130,7 +130,8 @@ software or the data and hold no copyright in this repository.
 ## Citation
 
 See `CITATION.cff`, which names both licences (MIT and CC BY 4.0). Please cite the article and
-the release you used, by its version DOI (v0.1: https://doi.org/10.5281/zenodo.23250604);
+the release you used, by its version DOI (v0.1: https://doi.org/10.5281/zenodo.23250604; v0.2:
+https://doi.org/10.5281/zenodo.23254011);
 https://doi.org/10.5281/zenodo.23246417 always resolves to the latest version.
 
 ## Licence
