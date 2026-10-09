@@ -1,6 +1,6 @@
 [project]
 name = "auto-road-2"
-version = "0.1.0"
+version = "0.2.0"
 description = "Height Area Graphs for automated preliminary road alignment: code and results of the article"
 readme = "README.md"
 authors = [

@@ -4,8 +4,8 @@
 
 | | |
 |---|---|
-| Latest release | v0.1 (version 0.1.0), 2026-10-08 |
-| Archive (DOI) | v0.1: https://doi.org/10.5281/zenodo.23250604 · all versions: https://doi.org/10.5281/zenodo.23246417 |
+| Latest release | v0.2 (version 0.2.0), 2026-10-09: the full rerun on macOS (Apple M3 Pro) |
+| Archive (DOI) | v0.1: https://doi.org/10.5281/zenodo.23250604 · v0.2: see the all-versions DOI · all versions: https://doi.org/10.5281/zenodo.23246417 |
 | Repository | https://github.com/stefaneduard-deaconu/auto-road-2 (branch `article-2026`) |
 | Software and data | Ioana-Alexandra Șomîtcă, Ștefan-Eduard Deaconu (see *Authors and contributions*) |
 | Article | *Height Area Graphs for Automated Preliminary Road Alignment in Hilly Terrain* (Șomîtcă, Deaconu, Boitor, Dragomir), in preparation |
@@ -82,6 +82,17 @@ python -m article_2.build_article --article hag           # the tables
 ```
 
 A stopped `core.run` experiment resumes where it stopped when the same command is issued again.
+
+Two notes on reproducing v0.2:
+
+- **Ties between equal-cost paths.** The objectives, path costs and selected areas are the same on
+  every platform. When two paths have exactly the same cost, a different platform may pick the
+  other one, so path geometry (maximum grade, minimum radius, Hausdorff distance), heap push
+  counts and station-level STAS checks can differ slightly. v0.2 (macOS) reproduces v0.1
+  (Windows) in this sense.
+- **X6 at 1 m is not run.** The whole DEM at 1 m needs about 25 GiB in one array. v0.2 runs X6 at
+  3, 5, 10 and 20 m, one resolution at a time:
+  `python -m core.run X6 --tier full --only whole_c20_` (then `whole_c10_`, `whole_c5_`, `whole_c3_`).
 
 ## Checking a rerun against a release
 
